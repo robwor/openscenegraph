@@ -21,7 +21,7 @@ linux-build:
       -D CMAKE_RELWITHDEBINFO_POSTFIX=
       -D OSG_TEXT_USE_FONTCONFIG=0
       -D BUILD_OSG_PLUGIN_JPEG=0
-      - DBUILD_OSG_PLUGIN_TIFF=0
+      -D BUILD_OSG_PLUGIN_TIFF=0
 
     - cmake --build $BUILD_DIR
     - cmake --build $BUILD_DIR --target install
