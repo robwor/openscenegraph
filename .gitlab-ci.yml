@@ -8,7 +8,7 @@ variables:
   PREFIX_DIR: "$CI_PROJECT_DIR/osg-dist"
 
 linux-build:
-  image: registry.gitlab.com/flightgear/flightgear
+  image: registry.gitlab.com/flightgear/flightgear/stable-build
   stage: build
   rules:
     - if: $CI_PIPELINE_SOURCE != "schedule"
