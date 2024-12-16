@@ -94,6 +94,3 @@ macos-build:
       - osg-dist
     exclude:
       - osg-dist/lib/pkgconfig/*
-  cache:
-    paths:
-      - $BUILD_DIR
