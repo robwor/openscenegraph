@@ -74,7 +74,7 @@ windows_build_32:
   needs:
     - project: flightgear/windows-3rd-party
       job: windows_build_msvc140
-      ref: master
+      ref: release/2020.3
       artifacts: true
   artifacts:
     paths:
