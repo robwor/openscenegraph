@@ -141,20 +141,9 @@ public:
                 this->operator()(first+count-1,first);
                 break;
             }
-            case(GL_PATCHES):
-            {
-                unsigned int pos=first;
-                for(GLsizei i=15;i<count;i+=16,pos+=16)
-                {
-                    this->operator()(pos+5,pos+6,pos+9,pos+10);
-                }
-                break;
-            }
             default:
-            {
                 // can't be converted into to triangles.
                 break;
-            }
         }
     }
 
@@ -245,15 +234,6 @@ public:
                     this->operator()(*(iptr),*(iptr+1));
                 }
                 this->operator()(*(iptr),*(indices));
-                break;
-            }
-            case(GL_PATCHES):
-            {
-                IndexPointer iptr = indices;
-                for(GLsizei i=15;i<count;i+=16,iptr+=16)
-                {
-                    this->operator()(*(iptr+5),*(iptr+6),*(iptr+9),*(iptr+10));
-                }
                 break;
             }
             default:
@@ -352,15 +332,6 @@ public:
                 this->operator()(*(iptr),*(indices));
                 break;
             }
-            case(GL_PATCHES):
-            {
-                IndexPointer iptr = indices;
-                for(GLsizei i=15;i<count;i+=16,iptr+=16)
-                {
-                    this->operator()(*(iptr+5),*(iptr+6),*(iptr+9),*(iptr+10));
-                }
-                break;
-            }
             default:
                 // can't be converted into to triangles.
                 break;
@@ -454,15 +425,6 @@ public:
                     this->operator()(*(iptr),*(iptr+1));
                 }
                 this->operator()(*(iptr),*(indices));
-                break;
-            }
-            case(GL_PATCHES):
-            {
-                IndexPointer iptr = indices;
-                for(GLsizei i=15;i<count;i+=16,iptr+=16)
-                {
-                    this->operator()(*(iptr+5),*(iptr+6),*(iptr+9),*(iptr+10));
-                }
                 break;
             }
             default:
