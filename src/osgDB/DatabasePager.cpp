@@ -89,7 +89,7 @@ public:
 
     META_NodeVisitor("osgDB","ExpirePagedLODsVisitor")
 
-    virtual void apply(osg::PagedLOD& plod)
+    void apply(osg::PagedLOD& plod) override
     {
         _childPagedLODs.insert(&plod);
         markRequestsExpired(&plod);
@@ -289,7 +289,7 @@ public:
 
     bool requiresCompilation() const { return !empty(); }
 
-    virtual void apply(osg::Drawable& drawable)
+    void apply(osg::Drawable& drawable) override
     {
         if (_kdTreeBuilder.valid() && _markerObject.get()!=drawable.getUserData())
         {
@@ -305,7 +305,7 @@ public:
         }
     }
 
-    void apply(osg::Texture& texture)
+    void apply(osg::Texture& texture) override
     {
         // apply any changes if the texture is not static.
         if (texture.getDataVariance()!=osg::Object::STATIC &&
@@ -1822,7 +1822,7 @@ public:
 
     META_NodeVisitor("osgDB","FindPagedLODsVisitor")
 
-    virtual void apply(osg::PagedLOD& plod)
+    void apply(osg::PagedLOD& plod) override
     {
         plod.setFrameNumberOfLastTraversal(_frameNumber);
 
