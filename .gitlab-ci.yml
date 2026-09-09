@@ -95,7 +95,7 @@ macos-build:
   stage: build
   tags:
     - saas-macos-medium-m1
-  image: macos-14-xcode-15
+  image: macos-26-xcode-26
   before_script:
       - export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
       - export HOMEBREW_NO_INSTALL_CLEANUP=1
